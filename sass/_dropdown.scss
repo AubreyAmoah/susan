@@ -1,0 +1,133 @@
+.dropdown{
+    visibility: hidden;
+    display: none;
+
+    label{
+        cursor: pointer;
+        width: 100%;
+        transition: all .5s ease-in-out;
+
+        .one{
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: #fff;
+            height: 5px;
+            width: 40px;
+            transition: all .5s ease-in-out;
+        }
+
+        .two{
+            position: absolute;
+            top: 45%;
+            left: 0;
+            background: #fff;
+            height: 5px;
+            width: 40px;
+            transition: all .5s ease-in-out;
+        }
+
+        .three{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background: #fff;
+            height: 5px;
+            width: 40px;
+            transition: all .5s ease-in-out;
+        }
+    }
+    input{
+        visibility: hidden;
+        display: none;
+    }
+
+
+
+    .sidenav{
+        display: none;
+
+        img{
+            height: 50px;
+            margin-bottom: 30px;
+        }
+
+
+        &__list{
+            text-align: center;
+
+            &--item{
+                cursor: pointer;
+                list-style-type: none;
+                margin-bottom: 20px;
+
+                &_link{
+                    color: #fff;
+                    font-size: 18px;
+                    font-weight: 300;
+                    letter-spacing: 2px;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
+    input[type="checkbox"]:checked + label{
+        .one{
+            position: absolute;
+            top: 50%;
+            left: 0;
+            background: #fff;
+            height: 5px;
+            width: 40px;
+            transform: rotate(45deg);
+        }
+
+        .two{
+            display: none;
+            visibility: hidden;
+            height: 0;
+            width: 0;
+        }
+
+        .three{
+            position: absolute;
+            bottom: 35%;
+            left: 0;
+            background: #fff;
+            height: 5px;
+            width: 40px;
+            transform: rotate(-45deg);
+        }
+    }
+
+    input[type="checkbox"]:checked ~ .sidenav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 80vw;
+        visibility: visible;
+
+        background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent white background */
+        border-radius: 10px; /* Rounded corners */
+        padding: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Box shadow for the glassy effect */
+        backdrop-filter: blur(10px); /* Add a blur effect to the container */
+
+        position: absolute;
+        top: 35px;
+        left: 10px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .dropdown{
+        z-index: 999;
+        visibility: visible;
+        display: block;
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        height: 30px;
+    }
+}
